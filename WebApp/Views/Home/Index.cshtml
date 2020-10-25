@@ -1,8 +1,133 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿
+@{
+    ViewBag.Title = "Главная страница";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<h2>@ViewData["Text"]</h2>
+<header>
+    <div class="container">
+        <!-- Панель навигации -->
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+            <!-- меню сайта -->
+            <a class="navbar-brand" href="#">903217</a>
+            <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="#">Лб 1</a>
+                <a class="nav-item nav-link" href="#">Каталог</a>
+                <a class="nav-item nav-link" href="#">Администрирование</a>
+            </div>
+            <!-- меню сайта - конец -->
+            <!-- Информация пользователя -->
+            <a href="#" class="navbar-text ml-auto">
+                00,0 руб <i class="fas fa-shopping-cart nav-color"></i> (0)
+            </a>
+            <div class="dropdown ml-4 nav-color">
+                <div class="dropdown-toggle" id="dropdownMenuButton"
+                     data-toggle="dropdown" aria-haspopup="true"
+                     aria-expanded="false">
+                    <img src="images/avatar.png" width="30"
+                         alt="User" class="rounded" />
+                </div>
+                <div class="dropdown-menu"
+                     aria-labelledby="dropdownMenuButton">
+                    <div class="dropdown-item-text">
+                        <img src="images/avatar.png" width="50"
+                             alt="User" class="rounded" />
+                        user@mail.ru
+                    </div>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Мои товары</a>
+                    <a class="dropdown-item" href="#">Log off</a>
+                </div>
+            </div>
+            <!-- Информация пользователя - конец -->
+        </nav> <!-- Панель навигации - конец -->
+
+    </div><!-- container - конец -->
+</header><!-- header - конец -->
+<main class="container">
+    <h2>Список</h2>
+    <ol type="A">
+        @for (int i = 1; i < 5; i++)
+        {
+            <li>элемент @i списка</li>
+        }
+    </ol>
+    <hr />
+    <h2>Форма</h2>
+    <form class="form-horizontal" role="form" method="post">
+        <fieldset class="form-group">
+            <select asp-items="@ViewData["Lst"] as SelectList"></select>
+        </fieldset>
+        <div class="form-group row" style="margin-bottom:0px">
+            <div class="col-sm-10 offset-sm-2">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="checkBox1">
+                    <label class="form-check-label" for="checkBox1">Чек-бокс 1</label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-10 offset-sm-2">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="checkBox2">
+                    <label class="form-check-label" for="checkBox2">Чек-бокс 2</label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-auto offset-sm-2">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="radioGroup" id="radio1" value="option1" checked>
+                    <label class="form-check-label" for="radio1">Радио-1</label>
+                </div>
+            </div>
+            <div class="col-auto">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="radioGroup" id="radio2" value="option2">
+                    <label class="form-check-label" for="radio2">Радио-2</label>
+                </div>
+            </div>
+            <div class="col-auto">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="radioGroup" id="radio3" value="option3">
+                    <label class="form-check-label" for="radio3">Радио-3</label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="login" class="col-sm-2 col-form-label">Логин:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="login" name="login" placeholder="Введите имя">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="pass" class="col-sm-2 control-label">Пароль:</label>
+            <div class="col-sm-10">
+                <input type="password" id="pass" name="pass" class="form-control" placeholder="Введите пароль" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-8" style="padding:0px">
+                <button type="submit" class="btn btn-info">Отправить</button>
+            </div>
+        </div>
+    </form>
+</main>
+<footer class="fixed-bottom">
+    <div class="container">
+        <div class="navbar navbar-dark navbar-expand-md bg-dark">
+            <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link" href="http://www.facebook.com">
+                    <i class="fab fa-facebook-f fa-2x"></i>
+                </a>
+                <a class="nav-item nav-link" href="http://www.vk.com">
+                    <i class="fab fa-vk fa-2x"></i>
+                </a>
+                <a class="nav-item nav-link" href="http://www.twitter.com">
+                    <i class="fab fa-twitter fa-2x"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
