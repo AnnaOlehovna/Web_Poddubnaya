@@ -164,3 +164,7 @@ D:\ПОИС\Веб\WebApp\WebApp\obj\Debug\netcoreapp3.1\WebApp.csproj.CoreCompi
 D:\ПОИС\Веб\WebApp\WebApp\obj\Debug\netcoreapp3.1\WebApp.MvcApplicationPartsAssemblyInfo.cs
 D:\ПОИС\Веб\WebApp\WebApp\obj\Debug\netcoreapp3.1\WebApp.MvcApplicationPartsAssemblyInfo.cache
 D:\ПОИС\Веб\WebApp\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
+D:\ПОИС\Веб\WebApp\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Menu\Default.cshtml.g.cs
+D:\ПОИС\Веб\WebApp\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout - Копировать.cshtml.g.cs
+D:\ПОИС\Веб\WebApp\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_UserPartial.cshtml.g.cs
+D:\ПОИС\Веб\WebApp\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Cart\Default.cshtml.g.cs
