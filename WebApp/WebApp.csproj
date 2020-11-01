@@ -15,10 +15,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\Images\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\WebApp.DAL\WebApp.DAL.csproj" />
   </ItemGroup>
 
