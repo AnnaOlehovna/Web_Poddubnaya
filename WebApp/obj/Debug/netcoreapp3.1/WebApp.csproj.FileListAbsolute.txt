@@ -165,6 +165,14 @@ D:\ПОИС\Веб\WebApp\WebApp\obj\Debug\netcoreapp3.1\WebApp.MvcApplicationPa
 D:\ПОИС\Веб\WebApp\WebApp\obj\Debug\netcoreapp3.1\WebApp.MvcApplicationPartsAssemblyInfo.cache
 D:\ПОИС\Веб\WebApp\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
 D:\ПОИС\Веб\WebApp\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Menu\Default.cshtml.g.cs
-D:\ПОИС\Веб\WebApp\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout - Копировать.cshtml.g.cs
 D:\ПОИС\Веб\WebApp\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_UserPartial.cshtml.g.cs
 D:\ПОИС\Веб\WebApp\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Cart\Default.cshtml.g.cs
+D:\ПОИС\Веб\WebApp\WebApp\bin\Debug\netcoreapp3.1\WebApp.DAL.dll
+D:\ПОИС\Веб\WebApp\WebApp\bin\Debug\netcoreapp3.1\WebApp.DAL.pdb
+D:\ПОИС\Веб\WebApp\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout - Copy.cshtml.g.cs
+D:\ПОИС\Веб\WebApp\WebApp\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Login.cshtml.g.cs
+D:\ПОИС\Веб\WebApp\WebApp\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Logout.cshtml.g.cs
+D:\ПОИС\Веб\WebApp\WebApp\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Register.cshtml.g.cs
+D:\ПОИС\Веб\WebApp\WebApp\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\_ViewImports.cshtml.g.cs
+D:\ПОИС\Веб\WebApp\WebApp\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ValidationScriptsPartial.cshtml.g.cs
+D:\ПОИС\Веб\WebApp\WebApp\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
