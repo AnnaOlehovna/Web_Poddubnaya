@@ -1,27 +1,36 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using System.Linq;
 using WebApp.DAL.Entities;
+using WebApp.Models;
 
 namespace WebApp.Controllers
 {
     public class ProductController : Controller
     {
-        List<Certificate> _certificates;
-        List<CertificateGroup> _cetificateGroups;
+        public List<Certificate> _certificates;
+        List<CertificateGroup> _certificateGroups;
+
+        int _pageSize;
 
         public ProductController()
         {
+            _pageSize = 3;
             SetUpData();
         }
 
-        public IActionResult Index()
+        public IActionResult Index(int? group, int pageNo = 1)
         {
-            return View(_certificates);
+            var certificatesFiltered = _certificates
+                .Where(d => !group.HasValue || d.CertificateGroupId == group.Value);
+            ViewData["Groups"] = _certificateGroups;
+            ViewData["CurrentGroup"] = group ?? 0;
+            return View(ListViewModel<Certificate>.GetModel(certificatesFiltered, pageNo, _pageSize));
         }
 
         private void SetUpData()
         {
-            _cetificateGroups = new List<CertificateGroup>
+            _certificateGroups = new List<CertificateGroup>
             {
                new CertificateGroup { CertificateGroupId = 1, GroupName = "СПА"},
                new CertificateGroup { CertificateGroupId = 2, GroupName = "Квесты"},

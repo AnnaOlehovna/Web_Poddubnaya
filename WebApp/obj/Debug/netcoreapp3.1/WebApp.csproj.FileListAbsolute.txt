@@ -177,3 +177,4 @@ D:\ПОИС\Веб\WebApp\WebApp\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pa
 D:\ПОИС\Веб\WebApp\WebApp\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ValidationScriptsPartial.cshtml.g.cs
 D:\ПОИС\Веб\WebApp\WebApp\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
 D:\ПОИС\Веб\WebApp\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Product\Index.cshtml.g.cs
+D:\ПОИС\Веб\WebApp\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Product\_ListItemPartial.cshtml.g.cs
