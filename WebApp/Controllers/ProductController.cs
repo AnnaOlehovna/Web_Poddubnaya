@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using WebApp.DAL.Entities;
+using WebApp.Extensions;
 using WebApp.Models;
 
 namespace WebApp.Controllers
@@ -19,13 +20,18 @@ namespace WebApp.Controllers
             SetUpData();
         }
 
+        [Route("Catalog")]
+        [Route("Catalog/Page_{pageNo}")]
         public IActionResult Index(int? group, int pageNo = 1)
         {
-            var certificatesFiltered = _certificates
-                .Where(d => !group.HasValue || d.CertificateGroupId == group.Value);
+            var certificatesFiltered = _certificates.Where(d => !group.HasValue || d.CertificateGroupId == group.Value);
             ViewData["Groups"] = _certificateGroups;
             ViewData["CurrentGroup"] = group ?? 0;
-            return View(ListViewModel<Certificate>.GetModel(certificatesFiltered, pageNo, _pageSize));
+            var model = ListViewModel<Certificate>.GetModel(certificatesFiltered, pageNo, _pageSize);
+            if (Request.IsAjaxRequest())
+                return PartialView("_listpartial", model);
+            else
+                return View(model);
         }
 
         private void SetUpData()

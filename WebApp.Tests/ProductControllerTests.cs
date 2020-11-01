@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Moq;
 using System.Collections.Generic;
 using WebApp.Controllers;
 using WebApp.DAL.Entities;
@@ -13,8 +15,7 @@ namespace WebApp.Tests
         [MemberData(nameof(TestData.Params), MemberType = typeof(TestData))]
         public void ControllerGetsProperPage(int page, int qty, int id)
         {
-            // Arrange
-            var controller = new ProductController();
+            var controller = createProductController();
             controller._certificates = TestData.GetCertificatesList();
             // Act
             var result = controller.Index(pageNo: page, group: null) as ViewResult;
@@ -29,7 +30,7 @@ namespace WebApp.Tests
         public void ControllerSelectsGroup()
         {
             // arrange
-            var controller = new ProductController();
+            var controller = createProductController();
             var data = TestData.GetCertificatesList();
             controller._certificates = data;
             var comparer = Comparer<Certificate>
@@ -40,6 +41,17 @@ namespace WebApp.Tests
             // assert
             Assert.Equal(2, model.Count);
             Assert.Equal(data[2], model[0], comparer);
+        }
+
+        private ProductController createProductController()
+        {
+            // Контекст контроллера
+            var controllerContext = new ControllerContext();
+            // Макет HttpContext
+            var moqHttpContext = new Mock<HttpContext>();
+            moqHttpContext.Setup(c => c.Request.Headers).Returns(new HeaderDictionary());
+            controllerContext.HttpContext = moqHttpContext.Object;
+            return new ProductController() { ControllerContext = controllerContext };
         }
     }
 }
