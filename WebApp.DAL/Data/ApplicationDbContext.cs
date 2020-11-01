@@ -6,9 +6,10 @@ namespace WebApp.DAL.Data
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
-        public
-        ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
-        : base(options)
+        public DbSet<Certificate> Certificates { get; set; }
+        public DbSet<CertificateGroup> CertificateGroups { get; set; }
+
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options): base(options)
         {
         }
     }

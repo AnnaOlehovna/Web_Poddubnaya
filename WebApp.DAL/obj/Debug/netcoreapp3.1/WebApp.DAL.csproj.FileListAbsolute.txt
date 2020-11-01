@@ -1,9 +1,9 @@
 D:\ПОИС\Веб\WebApp\WebApp.DAL\bin\Debug\netcoreapp3.1\WebApp.DAL.deps.json
 D:\ПОИС\Веб\WebApp\WebApp.DAL\bin\Debug\netcoreapp3.1\WebApp.DAL.dll
-D:\ПОИС\Веб\WebApp\WebApp.DAL\obj\Debug\netcoreapp3.1\WebApp.DAL.csprojAssemblyReference.cache
 D:\ПОИС\Веб\WebApp\WebApp.DAL\obj\Debug\netcoreapp3.1\WebApp.DAL.AssemblyInfoInputs.cache
 D:\ПОИС\Веб\WebApp\WebApp.DAL\obj\Debug\netcoreapp3.1\WebApp.DAL.AssemblyInfo.cs
 D:\ПОИС\Веб\WebApp\WebApp.DAL\bin\Debug\netcoreapp3.1\WebApp.DAL.pdb
 D:\ПОИС\Веб\WebApp\WebApp.DAL\obj\Debug\netcoreapp3.1\WebApp.DAL.csproj.CoreCompileInputs.cache
 D:\ПОИС\Веб\WebApp\WebApp.DAL\obj\Debug\netcoreapp3.1\WebApp.DAL.dll
 D:\ПОИС\Веб\WebApp\WebApp.DAL\obj\Debug\netcoreapp3.1\WebApp.DAL.pdb
+D:\ПОИС\Веб\WebApp\WebApp.DAL\obj\Debug\netcoreapp3.1\WebApp.DAL.csprojAssemblyReference.cache

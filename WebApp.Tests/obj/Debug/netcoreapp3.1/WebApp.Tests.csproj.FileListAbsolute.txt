@@ -233,3 +233,7 @@ D:\ПОИС\Веб\WebApp\WebApp.Tests\bin\Debug\netcoreapp3.1\Microsoft.Extensi
 D:\ПОИС\Веб\WebApp\WebApp.Tests\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
 D:\ПОИС\Веб\WebApp\WebApp.Tests\obj\Debug\netcoreapp3.1\WebApp.Tests.dll
 D:\ПОИС\Веб\WebApp\WebApp.Tests\obj\Debug\netcoreapp3.1\WebApp.Tests.pdb
+D:\ПОИС\Веб\WebApp\WebApp.Tests\bin\Debug\netcoreapp3.1\Castle.Core.dll
+D:\ПОИС\Веб\WebApp\WebApp.Tests\bin\Debug\netcoreapp3.1\Moq.dll
+D:\ПОИС\Веб\WebApp\WebApp.Tests\obj\Debug\netcoreapp3.1\WebApp.Tests.csproj.CoreCompileInputs.cache
+D:\ПОИС\Веб\WebApp\WebApp.Tests\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.InMemory.dll

@@ -218,6 +218,50 @@ namespace WebApp.DAL.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
+            modelBuilder.Entity("WebApp.DAL.Entities.Certificate", b =>
+                {
+                    b.Property<int>("CertificateId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("CertificateGroupId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("CertificateName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Image")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Price")
+                        .HasColumnType("int");
+
+                    b.HasKey("CertificateId");
+
+                    b.HasIndex("CertificateGroupId");
+
+                    b.ToTable("Certificates");
+                });
+
+            modelBuilder.Entity("WebApp.DAL.Entities.CertificateGroup", b =>
+                {
+                    b.Property<int>("CertificateGroupId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("GroupName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("CertificateGroupId");
+
+                    b.ToTable("CertificateGroups");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -265,6 +309,15 @@ namespace WebApp.DAL.Migrations
                     b.HasOne("WebApp.DAL.Entities.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("WebApp.DAL.Entities.Certificate", b =>
+                {
+                    b.HasOne("WebApp.DAL.Entities.CertificateGroup", "Group")
+                        .WithMany("Dishes")
+                        .HasForeignKey("CertificateGroupId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
