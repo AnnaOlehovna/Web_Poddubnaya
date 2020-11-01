@@ -9,7 +9,8 @@ namespace WebApp.Components
         private List<MenuItem> _menuItems = new List<MenuItem> {
             new MenuItem{ Controller="Home", Action="Index", Text="Lab 2"},
             new MenuItem{ Controller="Product", Action="Index",Text="Каталог"},
-            new MenuItem{ IsPage=true, Area="Admin", Page="/Index",Text="Администрирование"}
+            new MenuItem{ IsPage=true, Area="Admin", Page="/Index",Text="Администрирование"},
+            new MenuItem{ IsPage=true, Area="ApiDemo", Page="/Index",Text="API-demo"}
         };
 
         public IViewComponentResult Invoke()

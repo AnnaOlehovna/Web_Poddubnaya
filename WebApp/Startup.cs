@@ -7,8 +7,10 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using WebApp.DAL.Data;
 using WebApp.DAL.Entities;
+using WebApp.Extensions;
 using WebApp.Models;
 using WebApp.Services;
 
@@ -54,11 +56,14 @@ namespace WebApp
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env,
             ApplicationDbContext context, UserManager<ApplicationUser> userManager,
-            RoleManager<IdentityRole> roleManager)
+            RoleManager<IdentityRole> roleManager, ILoggerFactory logger)
         {
             DbInitializer.Seed(context, userManager, roleManager)
                 .GetAwaiter()
                 .GetResult();
+
+            logger.AddFile("Logs/log-{Date}.txt");
+            app.UseFileLogging();
 
             if (env.IsDevelopment())
             {
