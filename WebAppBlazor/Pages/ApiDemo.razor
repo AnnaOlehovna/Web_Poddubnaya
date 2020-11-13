@@ -1,0 +1,43 @@
+﻿@page "/apidemo"
+@inject IHttpClientFactory clientFactory
+@using System.Net.Http;
+@using WebAppBlazor.Data
+@using WebAppBlazor.Components
+@using System.Text.Json
+
+<div class="container">
+    <CertificateList @bind-Certificates="certificates" SelectedObjectChanged="ShowDetails" />
+    <CertificateDetails @bind-Certificate="SelectedCertificate"/>
+</div>
+
+@code {
+    public IEnumerable<CertificateListViewModel> certificates { get; set; }
+
+    string apiBaseAddress = "https://localhost:44392/Api/Certificates";
+
+    protected override async Task OnInitializedAsync()
+    {
+        var request = new HttpRequestMessage(HttpMethod.Get, apiBaseAddress);
+        var client = clientFactory.CreateClient();
+        var response = await client.SendAsync(request);//client.GetAsync(apiBaseAddress);
+        if (response.IsSuccessStatusCode)
+        {
+            using var responseStream = await response.Content.ReadAsStreamAsync();
+            certificates = await JsonSerializer.DeserializeAsync<IEnumerable<CertificateListViewModel>>(responseStream, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+        }
+    }
+
+    [Parameter]
+    public CertificateDetailsViewModel SelectedCertificate { get; set; }
+    private async Task ShowDetails(int id)
+    {
+        var client = clientFactory.CreateClient();
+        var response = await client.GetAsync(apiBaseAddress + $"/{id}");
+        if (response.IsSuccessStatusCode)
+        {
+            using var responseStream = await response.Content.ReadAsStreamAsync();
+            SelectedCertificate = await
+        JsonSerializer.DeserializeAsync<CertificateDetailsViewModel>(responseStream);
+        }
+    }
+}

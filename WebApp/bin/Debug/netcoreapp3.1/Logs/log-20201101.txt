@@ -1,0 +1,5 @@
+2020-11-01T21:44:54.3020139+03:00  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2020-11-01T21:44:54.3048019+03:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-11-01T21:44:54.3048565+03:00  [INF] Hosting environment: "Production" (c3307c92)
+2020-11-01T21:44:54.3048675+03:00  [INF] Content root path: "D:\ПОИС\Веб\WebApp\WebApp\bin\Debug\netcoreapp3.1" (b5d60022)
+2020-11-01T21:44:57.7588432+03:00  [INF] Application is shutting down... (90f52c38)

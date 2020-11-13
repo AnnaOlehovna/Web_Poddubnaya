@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "NZTpuw8u+E6TcFZvWjFjIyBOB8TWdJbcn/b5NLpYkT1ZN27VSu97pcUWnKzbIIZqoXv2LMcNKvlC5aoQQe80xg==",
+  "success": true,
+  "projectFilePath": "D:\\ПОИС\\Веб\\WebApp\\WebAppBlazor\\WebAppBlazor.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\admin\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\3.1.9\\microsoft.extensions.dependencyinjection.3.1.9.nupkg.sha512",
+    "C:\\Users\\admin\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\3.1.9\\microsoft.extensions.dependencyinjection.abstractions.3.1.9.nupkg.sha512"
+  ],
+  "logs": []
+}

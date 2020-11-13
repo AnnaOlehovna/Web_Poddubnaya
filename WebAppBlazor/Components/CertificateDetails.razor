@@ -1,0 +1,22 @@
+﻿@using WebAppBlazor.Data
+@if (Certificate != null)
+{
+    <img src="@imageSrc" class="img-thumbnail" width="150" />
+    <div>
+        <p>@Certificate.CertificateName - @Certificate.Description</p>
+        <div class="badge badge-info ">@Certificate.Price BYN</div>
+    </div>
+}
+@code {
+    [Parameter]
+    public CertificateDetailsViewModel Certificate { get; set; }
+    [Parameter]
+    public EventCallback<CertificateDetailsViewModel> CertificateChanged { get; set; }
+    string imageSrc
+    {
+        get
+        {
+            return $"https://localhost:44392/images/{Certificate.Image}";
+        }
+    }
+}

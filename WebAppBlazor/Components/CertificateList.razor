@@ -1,0 +1,36 @@
+﻿@using WebAppBlazor.Data
+<h3>CertificateList</h3>
+@if (Certificates == null)
+{
+    <p>Загрузка ...</p>
+}
+else
+{
+    <div class="list-group">
+        @{
+            var i = 1;
+            foreach (var cert in Certificates)
+            {
+                <button type="button" class="list-group-item list-group-item-action @(SelectedId == cert.CertificateId ? "active" : "")" 
+                        @onclick="@(e => Selected(e, cert.CertificateId))" >
+                    @(i++) - @cert.CertificateName
+                </button>
+            }
+        }
+    </div>
+}
+@code {
+    [Parameter]
+    public IEnumerable<CertificateListViewModel> Certificates { get; set; }
+    [Parameter]
+    public EventCallback<IEnumerable<CertificateListViewModel>> CertificatesChanged { get; set; }
+    [Parameter]
+    public EventCallback<int> SelectedObjectChanged { get; set; }
+
+    private int SelectedId = 0;
+    private void Selected(MouseEventArgs e, int id)
+    {
+        SelectedId = id;
+        SelectedObjectChanged.InvokeAsync(id);
+    }
+}
